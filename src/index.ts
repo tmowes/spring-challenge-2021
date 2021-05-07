@@ -3,7 +3,9 @@ import { initialInputs, turnInputs } from './input'
 initialInputs()
 
 while (true) {
-  const { sunPoints, myTrees } = turnInputs()
+  const { possibleActions, sunPoints, myTrees } = turnInputs()
+
+  console.error(possibleActions)
 
   if (sunPoints > 4) {
     const mostValuableTreeID = myTrees[0]

@@ -61,6 +61,23 @@ export const turnInputs = (): TurnInput => {
   const sortedTrees = trees.sort((a, b) => a.cellIndex - b.cellIndex)
   const myTrees = sortedTrees.filter(tree => tree.isMine)
 
+
+
+
+  const actions = possibleActions.map(item => item.split(' '))
+
+
+  actions[0].sort((a, b) => Number(a[3]) - Number(b[3]))
+
+  console.error(actions)
+
+
+  // actions[0].map(item => {
+  //   if (item[0] === 'SEED') {
+  //     const sortedSeeds = actions.sort((a, b) => a[3] - b[3])
+  //   }
+  // })
+
   return {
     day,
     nutrients,
