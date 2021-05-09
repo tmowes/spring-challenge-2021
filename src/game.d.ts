@@ -7,6 +7,7 @@ type Cell = {
 export type InitialInputs = {
   numberOfCells: number
   cells: Cell[]
+  usableCells: Cell[]
 }
 
 type Tree = {
@@ -20,14 +21,78 @@ export type TurnInput = {
   day: number
   nutrients: number
   sunPoints: number
-  score: number
+  myScore: number
   oppSun: number
   oppScore: number
   oppIsWaiting: boolean
-  myTrees: Tree[]
+  trees: Tree[]
   possibleActions: string[]
 }
 
 type ActionType = 'GROW' | 'SEED' | 'COMPLETE' | 'WAIT'
 
 // GROW cellIdx | SEED sourceIdx targetIdx | COMPLETE cellIdx | WAIT
+
+export type CreateRankData = {
+  day?: number
+  nutrients?: number
+  sunPoints?: number
+  myScore?: number
+  oppSun?: number
+  oppScore?: number
+  numberOfTrees?: number
+  oppIsWaiting?: boolean
+  trees?: Tree[]
+  possibleActions?: string[]
+  cells: Cell[]
+  usableCells: Cell[]
+}
+
+export type PossibleSeedData = {
+  day?: number
+  nutrients?: number
+  sunPoints?: number
+  myScore?: number
+  oppSun?: number
+  oppScore?: number
+  oppIsWaiting?: boolean
+  trees?: Tree[]
+  possibleActions?: string[]
+  numberOfCells?: number
+  cells?: Cell[]
+  usableCells?: Cell[]
+}
+export type PossibleGrowData = {
+  day?: number
+  nutrients?: number
+  sunPoints?: number
+  myScore?: number
+  oppSun?: number
+  oppScore?: number
+  oppIsWaiting?: boolean
+  trees?: Tree[]
+  possibleActions?: string[]
+  numberOfCells?: number
+  cells?: Cell[]
+  usableCells?: Cell[]
+}
+export type PossibleComplete = {
+  day?: number
+  nutrients?: number
+  sunPoints?: number
+  myScore?: number
+  oppSun?: number
+  oppScore?: number
+  oppIsWaiting?: boolean
+  trees?: Tree[]
+  possibleActions?: string[]
+  numberOfCells?: number
+  cells?: Cell[]
+  usableCells?: Cell[]
+}
+
+export type SeedsActions = {
+  action: string
+  cellID: number
+  targetID: number
+}[]
