@@ -8,7 +8,8 @@
       {
         "singleQuote": true,
         "semi": false,
-        "arrowParens": "avoid"
+        "arrowParens": "avoid",
+        "printWidth": 95
       }
     ],
     "no-empty-pattern": "off",

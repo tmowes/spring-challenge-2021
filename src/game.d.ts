@@ -46,6 +46,14 @@ export type CreateRankData = {
   possibleActions?: string[]
   cells: Cell[]
   usableCells: Cell[]
+  possibleSeeds: PossibleSeed[]
+  possibleGrows: Tree[]
+  possibleCompletes: Tree[]
+}
+
+export type PossibleSeed = {
+  srcID: number
+  trgID: number
 }
 
 export type PossibleSeedData = {
@@ -77,6 +85,20 @@ export type PossibleGrowData = {
   usableCells?: Cell[]
 }
 export type PossibleComplete = {
+  day?: number
+  nutrients?: number
+  sunPoints?: number
+  myScore?: number
+  oppSun?: number
+  oppScore?: number
+  oppIsWaiting?: boolean
+  trees?: Tree[]
+  possibleActions?: string[]
+  numberOfCells?: number
+  cells?: Cell[]
+  usableCells?: Cell[]
+}
+export type CountTreeSizesProps = {
   day?: number
   nutrients?: number
   sunPoints?: number

@@ -13,8 +13,6 @@ export const possibleSeed = (props: PossibleSeedData) => {
         .filter(cell => cellsAround.indexOf(cell.index) > -1)
         .sort((a, b) => b.richness - a.richness)
 
-      // console.error(JSON.stringify(possibleCells))
-
       return {
         srcID: tree.cellIndex,
         possibleCells,
