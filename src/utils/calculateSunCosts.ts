@@ -3,9 +3,11 @@ import { costToGrowSizes, seedSize } from './gameConstants'
 
 export const calcSunCostToGrow = (treeToGrow: Tree, myTrees: Tree[]) => {
   if (!treeToGrow) return 99
+  console.error('calcSunCostToGrow', { treeToGrow, myTrees })
   return (
     costToGrowSizes[treeToGrow.size] +
-    myTrees.filter(tree => tree.size === treeToGrow.size).length
+    myTrees.filter(tree => tree.isMine && tree.size === treeToGrow.size).length -
+    1
   )
 }
 
