@@ -37,7 +37,7 @@ export const rankedActions = (props: CreateRankData) => {
       diminishReturn -
       lgTreeCount,
     seed:
-      Math.min(possibleSeeds.length, maxDaysDuration) - seedCount * seedCount - diminishReturn,
+      Math.min(possibleSeeds.length, maxDaysDuration - 2) - seedCount * 99 - diminishReturn,
     complete: 0,
   }
 
@@ -52,7 +52,7 @@ export const rankedActions = (props: CreateRankData) => {
 
   console.error('######################################')
   console.error('possibleSeedsLen:+', possibleSeeds.length)
-  console.error('fixRate:+', maxDaysDuration)
+  console.error('fixRate:+', maxDaysDuration - 2)
   console.error('seedCount:-', seedCount)
   console.error('diminishReturn:-', diminishReturn)
   console.error('##Rank_Seed:=', optionsCount.seed)
@@ -68,7 +68,7 @@ export const rankedActions = (props: CreateRankData) => {
 
   // if (seedCount >= 1 || lgTreeCount === 0) optionsCount.grow = 20 + seedCount + day
 
-  if (day > daysLeftToComplete && lgTreeCount > 0) optionsCount.complete = 99
+  if (day > daysLeftToComplete && lgTreeCount > 0) optionsCount.complete = 19
 
   // if (sunPoints >= calcSunCostToSeed(trees)) rank.seed += 1
 
@@ -100,7 +100,7 @@ export const rankedActions = (props: CreateRankData) => {
   console.error('optionsCount', optionsCount, day)
   console.error({ bestActionType })
 
-  if (day === 0 || sunPoints < 4) {
+  if (day === 0 || sunPoints < 3) {
     return 'wait'
   }
 

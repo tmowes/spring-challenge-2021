@@ -35,12 +35,12 @@ while (true) {
 
   console.error({ possibleActions })
 
-  if (bestActionType === 'seed' && bestPossibleSeed2.length) {
-    turnAction = `SEED ${bestPossibleSeed2[0].srcID} ${bestPossibleSeed2[0].trgID}`
-  }
-
   if (bestActionType === 'grow' && bestPossibleGrow.length) {
     turnAction = `GROW ${bestPossibleGrow[0].cellIndex}`
+  }
+
+  if (bestActionType === 'seed' && bestPossibleSeed2.length) {
+    turnAction = `SEED ${bestPossibleSeed2[0].srcID} ${bestPossibleSeed2[0].trgID}`
   }
 
   if (bestActionType === 'complete' && bestPossibleComplete.length) {
